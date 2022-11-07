@@ -11,7 +11,7 @@ RUN sed 's@.*AuthorizedKeysFile.*@AuthorizedKeysFile /storage/jevnisek/.ssh/auth
 RUN chmod 0700 /storage/jevnisek
 
 # allows the docker to access the outside world:
-RUN sed 's@.*IdentityFile.*@IdentityFile /storage/jevnisek/.ssh/id_rsa@' -i /etc/ssh/ssh_config
+RUN sed 's@.*IdentityFile.*@IdentityFile /storage/jevnisek/.ssh/id_ed25519@' -i /etc/ssh/ssh_config
 RUN sed 's@.*StrictHostKeyChecking.*@StrictHostKeyChecking off@' -i /etc/ssh/ssh_config
 
 # do not ask for git password
