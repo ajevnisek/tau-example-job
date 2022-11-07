@@ -14,7 +14,7 @@ Method (1) is preferable for production purposes and when your paper is done
 where you'd like to maintain reproducible results.
 Method (2) is preferable for development.
 
-We will present method (2) here. Method (1) can be induced from method (1) - 
+We will present method (2) here. Method (1) can be induced from method (2) - 
 simply put all your commands in the `Dockerfile` under a `RUN` prefix.
 
 # Setup
@@ -50,5 +50,5 @@ docker system prune -a
 
 # Run this image with run:ai:
 ```bash
-runai submit -g 1 --name avidan-container-demo -i ajevnisek/avidan-docker-cuda-ubuntu-16.04-conda -v ~/Desktop/sandbox/avidan-docker/from_container:/results --pvc=storage:/storage
+runai submit -g 1 -e HIDDEN_SIZE=10 --name private-repo-demo -i ajevnisek/tau-example-job -v ~/Desktop/sandbox/avidan-docker/from_container:/results --pvc=storage:/storage
 ```
