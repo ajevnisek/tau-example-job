@@ -52,3 +52,7 @@ docker system prune -a
 ```bash
 runai submit -g 1 -e HIDDEN_SIZE=10 --name private-repo-demo -i ajevnisek/tau-example-job -v ~/Desktop/sandbox/avidan-docker/from_container:/results --pvc=storage:/storage
 ```
+Or the simplified version:
+```bash
+runai submit -g 1 -e HIDDEN_SIZE=10 --name private-repo-demo -i ajevnisek/tau-example-job --pvc=storage:/storage
+```
