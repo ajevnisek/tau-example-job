@@ -17,6 +17,7 @@ RUN sed 's@.*StrictHostKeyChecking.*@StrictHostKeyChecking off@' -i /etc/ssh/ssh
 # do not ask for git password
 RUN sed 's@.*BatchMode.*@BatchMode yes@' -i /etc/ssh/ssh_config
 
-# clone repo and cd to a directory where the main is:
+WORKDIR /
+## clone repo and cd to a directory where the main is:
 COPY clone_repo_and_run_python_scripts.sh .
 ENTRYPOINT ["bash", "clone_repo_and_run_python_scripts.sh"]
